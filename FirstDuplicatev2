@@ -1,0 +1,33 @@
+var array0 = [2,4,3,5,1];
+
+var count=0;
+var a = 0;
+var appear = new Array();
+var refined = new Array();
+for (var i =0; i < array0.length ; i++){
+  for (var j = i+1; j< array0.length; j++){
+    if (array0[i]==array0[j]){
+      refined[a]= array0[i];
+      appear[a] = count;
+      a++;
+      count=0;
+    }else{
+      count++;
+    }
+  }
+  count=0;
+}
+
+var min = Math.min.apply(null, appear) ;
+var index = appear.indexOf(min);
+
+if(refined.length == 0)
+{
+   console.log(-1);
+}
+else
+{
+  console.log(refined[index]);
+}
+
+
